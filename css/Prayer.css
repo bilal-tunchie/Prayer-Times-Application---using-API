@@ -1,0 +1,326 @@
+/* Start Variables */
+:root {
+    --blue-color: #0075ff;
+    --black-color: #262729;
+    --black-color-alt: #0E0E0E;
+    --green-color: #2cbf92;
+    --green-color-alt: #04a88b;
+    --grey-color: #999183;
+    --border-color: #ccc;
+    --main-transition: 0.3s;
+}
+
+/* End Variables */
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--black-color);
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--black-color-alt);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--green-color);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--green-color-alt);
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+*:focus {
+    outline: none;
+}
+/* End Global Rules */
+
+/* Start head */
+.heading {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    --webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+@media (max-width: 767px) {
+    .head {
+        flex-direction: column;
+    }
+    .head > i {
+        margin-bottom: 20px;
+    }
+    .head .logo {
+        margin-bottom: 15px;
+    }
+    .head .bismillah {
+        margin-bottom: 15px;
+    }
+}
+.head nav .links > li:first-child::before {
+    content: '';
+    position: absolute;
+    border-color: white transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-10%);
+}
+.head nav li:first-child .flags > li,
+.head nav .links > li a {
+    transition: var(--main-transition);
+}
+.head nav .links > li a:hover {
+    color: var(--green-color);
+}
+.head nav li:first-child .flags > li:hover {
+    color: var(--green-color);
+}
+.head nav li:first-child .flags {
+    position: absolute;
+    top: 40px;
+    width: 130px;
+    left: -45px;
+}
+.head nav .down-app {
+    padding: 0.25rem 30px;
+    border: 1px solid var(--green-color);
+    border-radius: 4px;
+    transition: var(--main-transition);
+}
+.head nav .down-app:hover {
+    background-color: var(--green-color);
+    color: white;
+}
+@media (max-width: 992px) {
+    .heading .second-links {
+        justify-content: center;
+    }
+    .heading .second-links li {
+        padding-bottom: 5px;
+    }
+}
+.heading .second-links li.active {
+    border-bottom: 2px solid var(--green-color);
+}
+.heading .second-links li a {
+    transition: var(--main-transition);
+}
+.heading .second-links li a:hover {
+    color: var(--green-color);
+}
+/* End head */
+/* Start Banner  */
+.banner {
+    width: 70%;
+    padding: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    min-height: 290px;
+}
+@media (max-width: 992px) {
+    .banner {
+        width: 100%;
+    }
+}
+.banner .text {
+    width: 65%;
+}
+.banner .text h1 {
+    font-size: 28px;
+}
+.banner .text a {
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+.banner .text span {
+    position: absolute;
+    bottom: 0;
+    font-size: 9px;
+}
+.banner > img {
+    position: absolute;
+    width: 200px;
+    bottom: 0;
+    right: 20px;
+}
+@media (max-width: 600px) {
+    .banner > img {
+        display: none;
+    }
+    .banner .text {
+        width: 100%;
+        text-align: center;
+    }
+    .banner .text a {
+        margin: 0 auto;
+    }
+}
+/* End Banner  */
+/* Start Prayer Times  */
+.prayer {
+    padding: 25px;
+    border-radius: 20px;
+}
+@media (max-width: 767px) {
+    .prayer {
+        padding: 15px;
+    }
+    .prayer .info .info-text {
+        width: 200px;
+    }
+    .prayer .dates .date-hijri {
+        font-size: 12px;
+    }
+}
+
+
+
+.prayer-times {
+    margin-top: 25px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+.prayer-times .prayer-box {
+    width: 145px;
+    margin-bottom: 15px;
+}
+@media (max-width: 992px) {
+    .prayer-times .prayer-box {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px;
+    }
+    .prayer-times .prayer-box.active {
+        background-color: var(--green-color-alt);
+        color: var(--black-color-alt);
+    }
+    .prayer-times .prayer-box.active .upcoming {
+        margin: 0;
+        font-size: 14px;
+        order: 1;
+        background-color: var(--black-color);
+        color: white;
+        padding: 5px;
+        border-radius: 6px;
+    }
+    .prayer-times .prayer-box.active h4 {
+        margin: 0;
+        font-size: 18px;
+    }
+    .prayer-times .prayer-box.active .time {
+        margin-bottom: 0;
+        order: 2;
+        font-size: 18px;
+    }
+}
+@media (min-width: 992px) {
+    
+    .prayer-times .prayer-box {
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 105px;
+    }
+    .prayer-times .prayer-box.active {
+        width: 225px;
+        height: 160px;
+        color: white;
+        font-size: 20px;
+        justify-content: space-evenly;
+    }
+    .prayer-times .prayer-box.active.Fajr {
+        background-image: url(../img/fajr.png);
+        background-size: cover;
+    }
+    .prayer-times .prayer-box.active.Dhuhr {
+        background-image: url(../img/dhuhr.png);
+        background-size: cover;
+    }
+    .prayer-times .prayer-box.active.Asr {
+        background-image: url(../img/fajr.png);
+        background-size: cover;
+    }
+    .prayer-times .prayer-box.active.Maghrib {
+        background-image: url(../img/maghrib.png);
+        background-size: cover;
+    }
+    .prayer-times .prayer-box.active.Isha {
+        background-image: url(../img/isha.png);
+        background-size: cover;
+    }
+    .prayer-times .prayer-box.active .upcoming {
+        font-size: 23px;
+        order: -1;
+    }
+    .prayer-times .prayer-box h4 {
+        margin-bottom: 10px;
+    }
+    .prayer-times .prayer-box.active h4 {
+        margin-bottom: 0;
+    }
+}
+@media (max-width: 767px) {
+    .city > div {
+        width: 175px;
+    }
+}
+
+.city div .cities-tab {
+    background-color: var(--black-color);
+    width: 100px;
+    border: 1px solid var(--grey-color);
+}
+.city > a {
+    align-self: flex-end;
+}
+/* End Prayer Times  */

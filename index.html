@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Times</title>
+
+    <!-- Render Normalize -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Framework Css -->
+    <link rel="stylesheet" href="css/framework.css" />
+    <!-- Main Css -->
+    <link rel="stylesheet" href="css/Prayer.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet">
+
+    <!-- Install Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="page">
+        <!-- Start heading -->
+        <div class="heading bg-black-alt">
+            <div class="container">
+                <!-- Start head -->
+                <div class="head between-flex p-20 pb-10">
+                    <div class="logo d-flex align-items-c">
+                        <i class="fa-solid fa-mosque fa-2x c-green mr-10"></i>
+                        <h3 class="c-white fs-16">Muslim <span class="d-block">Guide</span></h3>
+                    </div>
+                    <div class="bismillah c-green fs-20">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+                    <nav class=" d-flex align-items-c">
+                        <ul class="links d-flex mr-15 c-white fw-n fs-14">
+                            <li class="p-10 mr-15 p-relative">
+                                <a id="language" class="c-white" href="#">English</a>
+                                <ul id="flags" class="flags fs-13 rad-6 d-none bg-black-alt">
+                                    <li class="pl-20 pt-10 pb-5"><a class="c-white" href="#">English</a></li>
+                                    <li class="pl-20 pt-10 pb-5"><a class="c-white" href="#">العربية</a></li>
+                                    <li class="pl-20 pt-10 pb-5"><a class="c-white" href="#">Turkey</a></li>
+                                    <li class="pl-20 pt-10 pb-10"><a class="c-white" href="#">Espanol</a></li>
+                                </ul>
+                            </li>
+                            <li class="p-10"><a class="c-white" href="#">Login</a></li>
+                        </ul>
+                        <a class="down-app c-green fs-15" href="#">Download App</a>
+                    </nav>
+                </div>
+                <!-- End head -->
+                <!-- Start second-links -->
+                <ul class="second-links between-flex fs-13 fw-n flex-wrap">
+                    <li class="p-10 active"><a class="c-white" href="#">Prayer Times</a></li>
+                    <li class="p-10"><a class="c-white" href="#">Special Islamic Days</a></li>
+                    <li class="p-10"><a class="c-white" href="#">30 Deeds Challenge</a></li>
+                    <li class="p-10"><a class="c-white" href="#">Muslims</a></li>
+                    <li class="p-10"><a class="c-white" href="#">Quran</a></li>
+                    <li class="p-10"><a class="c-white" href="#">Duas</a></li>
+                    <li class="p-10"><a class="c-white" href="#">Features & Tools</a></li>
+                    <li class="p-10"><a class="c-white" href="#">Contact Us</a></li>
+                </ul>
+                <!-- End second-links -->
+            </div>
+        </div>
+        <!-- End heading -->
+        <!-- Start Banner -->
+        <div class="container">
+            <div class="banner d-flex space-between g-10 bg-black-alt c-white p-relative">
+                <div class="text p-relative">
+                    <h1 class="m-0 fs-20">Missed your prayers again? Our app can help.</h1>
+                    <p class="mb-20 mt-20 fs-15">Get Prayer Times alert on your phone for free.</p>
+                    <a class="down-app d-block w-fit c-white bg-green" href="#">Download App</a>
+                    <span class="d-block">* We respect the General Data Protection Regulation and the Consumer Privacy Act guidelines</span>
+                </div>
+                <img src="img/prayertime-en.png" alt="App">
+            </div>
+        </div>
+        <!-- End Banner -->
+        <!-- Start Prayer -->
+        <div class="container">
+            <div class="prayer bg-black-alt c-white mb-20">
+                <!-- Start Info -->
+                <div class="info d-flex space-between g-10">
+                    <div class="info-text">
+                        <h3 class="m-0 fs-25">Prayer Times in <span id="chossenCity" class="c-green">Riyadh</span></h3>
+                        <p class="mt-10 fs-13 c-green-alt cursor-p">Wrong Location?</p>
+                    </div>
+                    <div class="dates txt-r fs-14">
+                        <span id="date-french" class="date-french">11 october 2022</span>
+                        <span id="date-hijri" class="date-hijri mt-5 d-block fw-bold">15 Rabi ul Awal, 1444</span>
+                    </div>
+                </div>
+                <!-- End Info -->
+                <!-- Start Prayer Times -->
+                <div class="prayer-times center-flex flex-wrap rad-10 fs-17">
+                    <div id="Fajr" class="prayer-box Fajr center-flex flex-column bg-black-b rad-10 txt-c">
+                        <h4 class="m-0">Fajr</h4>
+                        <span class="time d-block Fajr">04:32 AM</span>
+                    </div>
+                    <div id="Sunrise" class="prayer-box Sunrise center-flex flex-column bg-black-b rad-10 txt-c">
+                        <h4 class="m-0">Sunrise</h4>
+                        <span class="time d-block Sunrise">05:49 AM</span>
+                    </div>
+                    <div id="Dhuhr" class="prayer-box Dhuhr center-flex flex-column bg-black-b rad-10 txt-c">
+                        <h4 class="m-0">Dhuhr</h4>
+                        <span class="time d-block Dhuhr">11:40 AM</span>
+                    </div>
+                    <div id="Asr" class="prayer-box Asr center-flex flex-column bg-black-b rad-10 txt-c">
+                        <h4 class="m-0">Asr</h4>
+                        <span class="time d-block Asr">03:01 PM</span>
+                    </div>
+                    <div id="Maghrib" class="prayer-box Maghrib center-flex flex-column bg-black-b rad-10 txt-c">
+                        <h4 class="m-0">Maghrib</h4>
+                        <span class="time d-block Maghrib">05:31 PM</span>
+                    </div>
+                    <div id="Isha" class="prayer-box Isha center-flex flex-column bg-black-b rad-10 txt-c">
+                        <h4 class="m-0">Isha</h4>
+                        <span class="time d-block Isha" >07:01 PM</span>
+                    </div>
+                </div>
+                <!-- End Prayer Times -->
+                <!-- Start City -->
+                <div class="city fs-13 mt-20 d-flex space-between">
+                    <div>
+                        <div class="d-flex align-items-c mb-10">
+                            <h4 id="change-city" class="change-city fw-n w-fit mr-10 fs-20">Riyadh </h4>
+                            <select id="cities-tab" class="cities-tab rad-6 c-green cursor-p" name="Change">
+                            </select>
+                        </div>
+                        <p class="c-grey fs-11">Change the city you like to discover prayer time.</p>
+                    </div>
+                    <a class="c-green" href="#">Embed to your website</a>
+                </div>
+                <!-- End City -->
+            </div>
+        </div>
+        <!-- End Prayer -->
+
+    </div>
+    <script src="./Prayer.js"></script>
+</body>
+</html>
